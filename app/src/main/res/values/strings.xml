@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Practiсum Test App</string>
+    <string name="sales_icon">Sales</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about_text">Про нас</string>
+    <string name="main_scene_text">Главная</string>
+    <string name="logo_of_app1">Courses</string>
+    <string name="logo_of_app2">App</string>
+    <string name="course_start_date">Старт обучения:</string>
+    <string name="course_level">Уровень:</string>
+</resources>
