@@ -1,8 +1,11 @@
 package com.practicum.testapp.adapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +56,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             public void onClick(View view) {
                 Intent intent = new Intent(context, CoursePage.class);
 
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
+                        new Pair<View, String>(holder.courseImage,"courseImage")
+                        );
+
                 intent.putExtra("courseBg",Color.parseColor(courses.get(position).getColor()));
                 intent.putExtra("courseImage", imageId);
                 intent.putExtra("courseTitle", courses.get(position).getTitle());
@@ -60,7 +67,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                 intent.putExtra("courseLevel", courses.get(position).getLevel());
                 intent.putExtra("courseText", courses.get(position).getText());
 
-                context.startActivity(intent);
+                context.startActivity(intent, options.toBundle());
             }
         });
 
