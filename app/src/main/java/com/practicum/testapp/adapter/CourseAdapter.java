@@ -56,9 +56,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             public void onClick(View view) {
                 Intent intent = new Intent(context, CoursePage.class);
 
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
-                        new Pair<View, String>(holder.courseImage,"courseImage")
-                        );
 
                 intent.putExtra("courseBg",Color.parseColor(courses.get(position).getColor()));
                 intent.putExtra("courseImage", imageId);
@@ -67,7 +64,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                 intent.putExtra("courseLevel", courses.get(position).getLevel());
                 intent.putExtra("courseText", courses.get(position).getText());
 
-                context.startActivity(intent, options.toBundle());
+                context.startActivity(intent);
             }
         });
 
